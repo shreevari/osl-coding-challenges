@@ -2,6 +2,21 @@
 #include<vector>
 using namespace std;
 
+vector<int> sanjith_solution(vector<int> input) {
+  int temp = 1;
+  vector<int> output;
+  for (int num: input) {
+    output.push_back(temp);
+    temp *= num;
+  }
+  temp = 1;
+  for (int i = input.size() - 1; i >= 0; i--) {
+    output[i] *= temp;
+    temp *= input[i];
+  }
+  return output;
+}
+
 vector<int> naive_solution(vector<int> input) {
 
   vector<int> output;
@@ -42,9 +57,9 @@ vector<int> using_division(vector<int> input) {
 }
 
 int main(int argc, char* argv[]) {
-  vector<int> input {1, 2, 0, 4, 5};
+  vector<int> input {1, 2, 3, 4, 5};
 
-  vector<int> output = using_division(input);
+  vector<int> output = sanjith_solution(input);
 
   for (int num: output)
     cout << num << endl;
