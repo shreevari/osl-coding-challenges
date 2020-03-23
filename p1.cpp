@@ -57,7 +57,7 @@ vector<int> using_division(vector<int> input) {
 }
 
 int main(int argc, char* argv[]) {
-  vector<int> input {1, 2, 3, 4, 5};
+  vector<int> input {10};
 
   vector<int> output = sanjith_solution(input);
 
